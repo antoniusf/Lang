@@ -49,8 +49,6 @@ def lambdaeval(string, replace=None):
         #print "Application: "+operator+", "+operand
         if replace == None:#Don't replace when there is already a replacement in progress
             if operator[0] == "/":#Check whether the operator is an abstraction and can thus be applied
-                if operand[0] == "/":
-                    operand = alpha_shift(operand)#Shift the function namespace so that conflicts cannot occur
                 replacechar = operator[1]
                 replacestring = operand
                 result, a = lambdaeval(operator, replace=(replacechar, replacestring))
@@ -78,13 +76,15 @@ def input_eval(string):
 a = "/f/xx"
 b = "/f/x-"
 
-symbols = { "a": "/a/bb", "b": "/a/ba", "c": "/a--a/b/cc/b/cb", "d": "/a/b/c-b--abc" }
+symbols = { "a": "/a/bb", "b": "/a/ba", "c": "/a--a/b/cc/d/ed", "d": "/a/b/c-b--abc", "e": "/a/b-ab", "f": "/a/b-a-ab", "g": "/a/b/c--cab" }
 reverse_symbols = {v:k for k, v in symbols.items()}
 
 if __name__ == "__main__":
 
     while True:
         exp = raw_input("")
+        if exp == "q":
+            break
         length = len(exp)
         new_exp = "-"*(length-1)
         for char in exp:
@@ -92,3 +92,4 @@ if __name__ == "__main__":
         result = input_eval(new_exp)
         if result in reverse_symbols.keys():
             print reverse_symbols[result]
+        print result
