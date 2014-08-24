@@ -85,7 +85,7 @@ def input_eval(string):
 a = "/f/xx"
 b = "/f/x-"
 
-symbols = { "a": "/a/bb", "b": "/a/ba", "c": "/a--a/b/cc/d/ed", "d": "/a/b/c-b--abc", "e": "/a/b-ab", "f": "/a/b-a-ab", "g": "/a/b/c--cab", "h": "/ab", "i": "/aa" }
+symbols = { "a": "/a/bb", "b": "/a/ba", "c": "/a/b/c--cba", "d": "/a--a/b/cc/d/ed", "e": "/a/b--ba/c/dd", "f": "/ab", "g": "/aa" }
 reverse_symbols = {v:k for k, v in symbols.items()}
 
 class Symbol:
