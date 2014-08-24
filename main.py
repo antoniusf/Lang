@@ -165,11 +165,11 @@ class Box:
 window = pyglet.window.Window(1024, 768)
 symbols_image = pyglet.image.load("symbols.png")
 symbols_highlighted_image = pyglet.image.load("symbols_highlighted.png")
-symbol_grid = pyglet.image.ImageGrid(symbols_image, 1, 9)
-symbol_highlighted_grid = pyglet.image.ImageGrid(symbols_highlighted_image, 1, 9)
+symbol_grid = pyglet.image.ImageGrid(symbols_image, 1, 7)
+symbol_highlighted_grid = pyglet.image.ImageGrid(symbols_highlighted_image, 1, 7)
 a = Symbol(symbol_grid[0], symbol_highlighted_grid[0], 0, 0, "a")
 symbol_list = []
-for i in range(9):
+for i in range(7):
     symbol_list.append(Symbol(symbol_grid[i], symbol_highlighted_grid[i], 12+i*73, 12, chr(ord("a")+i)))
 
 box_list = []
@@ -229,7 +229,7 @@ def update_result():
         result_box.symbol = None
     else:
         result = input_eval(exp)
-        print result
+        #print result
         if result == None:
             result_box.symbol = None
         else:

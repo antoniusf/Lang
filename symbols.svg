@@ -9,15 +9,15 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="60.66"
+   width="47.18"
    height="11.74"
    id="svg2"
    version="1.1"
    inkscape:version="0.48.3.1 r9886"
-   inkscape:export-filename="/home/antonius/Programmieren/ld/Lang/symbols.png"
+   inkscape:export-filename="/home/antonius/Programmieren/ld/Lang/symbols_highlighted.png"
    inkscape:export-xdpi="981.26068"
    inkscape:export-ydpi="981.26068"
-   sodipodi:docname="New document 1">
+   sodipodi:docname="symbols.svg">
   <defs
      id="defs4">
     <filter
@@ -54,24 +54,6 @@
          inkscape:collect="always"
          stdDeviation="0.2375"
          id="feGaussianBlur3827" />
-    </filter>
-    <filter
-       inkscape:collect="always"
-       id="filter3829"
-       color-interpolation-filters="sRGB">
-      <feGaussianBlur
-         inkscape:collect="always"
-         stdDeviation="0.2375"
-         id="feGaussianBlur3831" />
-    </filter>
-    <filter
-       inkscape:collect="always"
-       id="filter3833"
-       color-interpolation-filters="sRGB">
-      <feGaussianBlur
-         inkscape:collect="always"
-         stdDeviation="0.2375"
-         id="feGaussianBlur3835" />
     </filter>
     <filter
        inkscape:collect="always"
@@ -138,6 +120,19 @@
          stdDeviation="0.2375"
          id="feGaussianBlur3855" />
     </filter>
+    <filter
+       inkscape:collect="always"
+       id="filter3853-1"
+       x="-0.114"
+       width="1.228"
+       y="-0.057"
+       height="1.114"
+       color-interpolation-filters="sRGB">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="0.2375"
+         id="feGaussianBlur3855-7" />
+    </filter>
   </defs>
   <sodipodi:namedview
      id="base"
@@ -147,8 +142,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="7.9195959"
-     inkscape:cx="46.922449"
-     inkscape:cy="14.034614"
+     inkscape:cx="41.778679"
+     inkscape:cy="30.573917"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -168,8 +163,8 @@
        visible="true"
        enabled="true"
        snapvisiblegridlinesonly="true"
-       originx="-257.33344px"
-       originy="-319.13px" />
+       originx="-258.11409px"
+       originy="-299.13px" />
   </sodipodi:namedview>
   <metadata
      id="metadata7">
@@ -187,46 +182,11 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-257.33344,-721.49218)">
+     transform="translate(-258.11409,-741.49218)">
     <path
-       style="fill:none;stroke:#02ffd2;stroke-width:0.60000001999999997;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;filter:url(#filter3853)"
-       d="m 263.20344,722.36218 -5,0 0,10"
-       id="path2987"
-       inkscape:connector-curvature="0" />
-    <path
-       style="fill:none;stroke:#02ffd2;stroke-width:0.60000001999999997;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;filter:url(#filter3849)"
-       d="m 264.94344,722.36218 5,0 0,10"
-       id="path2989"
-       inkscape:connector-curvature="0" />
-    <path
-       style="fill:none;stroke:#02ffd2;stroke-width:0.60000001999999997;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;filter:url(#filter3845)"
-       d="m 271.68344,727.36218 5,5 -5,0 5,-5"
-       id="path2991"
-       inkscape:connector-curvature="0" />
-    <path
-       style="fill:none;stroke:#02ffd2;stroke-width:0.60000001999999997;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;filter:url(#filter3841)"
-       d="m 278.42344,727.36218 0,5 5,0 0,-5 z"
-       id="path2993"
-       inkscape:connector-curvature="0" />
-    <path
-       style="fill:none;stroke:#02ffd2;stroke-width:0.60000001999999997;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;filter:url(#filter3837)"
-       d="m 285.16344,732.36218 5,0 0,-5 -5,0 5,-5"
-       id="path2995"
-       inkscape:connector-curvature="0" />
-    <path
-       id="path3001"
-       style="fill:none;stroke:#02ffd2;stroke-width:0.60000001999999997;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;filter:url(#filter3825)"
-       d="m 291.90344,732.36218 5,0 m 1.74,-5 5,0 m -5,5 5,0"
-       inkscape:connector-curvature="0" />
-    <path
-       style="fill:none;stroke:#02ffd2;stroke-width:0.60000001999999997;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;filter:url(#filter3821)"
-       d="m 310.38344,727.36218 -5,0 0,5 5,0"
-       id="path3003"
-       inkscape:connector-curvature="0" />
-    <path
-       style="fill:none;stroke:#02ffd2;stroke-width:0.60000001999999997;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;filter:url(#filter3817)"
-       d="m 317.12344,722.36218 -5,5 0,5 5,0 0,-5"
-       id="path3007"
+       id="path3911"
+       style="color:#000000;fill:none;stroke:#97ff02;stroke-width:0.60000001999999997;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;filter:url(#filter3853-1);enable-background:accumulate"
+       d="m 299.42409,747.36218 5,0 m -11.74,5 5,-5 m -5,0 0,5 5,0 m -11.74,-5 0,5 5,0 0,-5 z m -6.74,0 5,5 -5,0 5,-5 m -11.74,0 5,0 0,5 m 0,-10 -5,0 0,10 m -6.74,-10 5,0 0,10 m -6.74,-5 -5,0 0,5"
        inkscape:connector-curvature="0" />
   </g>
 </svg>
