@@ -162,7 +162,36 @@ class Box:
                 self.symbol = None
                 return copy_symbol
 
-window = pyglet.window.Window(1024, 768)
+class MenuItem:
+
+    def __init__(self, img, img_highlighted, x, y, click_action):
+        self.x = x
+        self.y = y
+        self.sprite = pyglet.sprite.Sprite(img, x, y)
+        self.sprite_highlighted = pyglet.sprite.Sprite(img_highlighted, x, y)
+        self.highlighted = False
+        self.click_action = click_action
+
+    def draw(self):
+        if self.highlighted:
+            self.sprite_highlighted.draw()
+        else:
+            self.sprite.draw()
+
+    def on_mouse_motion(self, x, y):
+        if (x > self.x) and (y > self.y) and (x < self.x+self.sprite.width) and (y < self.y+self.sprite.height):
+            if self.highlighted == False:
+                self.highlighted = True
+                grab_sound.play()
+        else:
+            self.highlighted = False
+
+    def on_mouse_press(self, x, y, button):
+        if self.highlighted:
+            self.click_action()
+            drop_sound.play()
+
+window = pyglet.window.Window(640, 480)
 symbols_image = pyglet.image.load("symbols.png")
 symbols_highlighted_image = pyglet.image.load("symbols_highlighted.png")
 symbol_grid = pyglet.image.ImageGrid(symbols_image, 1, 7)
@@ -180,29 +209,63 @@ result_box = Box(530, 256)
 
 drag_symbol = None
 
+grab_sound = pyglet.media.load("grab.wav", streaming=False)
+drop_sound = pyglet.media.load("drop.wav", streaming=False)
+
+def play_action():
+    global menu
+    menu = False
+
+menu = True
+lang_image = pyglet.image.load("lang.png")
+lang_item = MenuItem(lang_image, lang_image, window.width/2-lang_image.width/2, 353, lambda: 1)
+play_item = MenuItem(pyglet.image.load("play.png"), pyglet.image.load("play_highlighted.png"), lang_item.x, 189, play_action)
+exit_item = MenuItem(pyglet.image.load("exit.png"), pyglet.image.load("exit_highlighted.png"), lang_item.x, 0, pyglet.app.exit)
+#menu_image = pyglet.image.load("menu.png")
+#menu_image.anchor_x = menu_image.width/2
+#menu_image.anchor_y = menu_image.height/2
+#menu_sign = pyglet.sprite.Sprite(menu_image, window.width/2, window.height/2)
+#menu_hover = None
+
 @window.event
 def on_draw():
     window.clear()
-    for box in box_list:
-        box.draw()
-    result_box.draw()
-    for symbol in symbol_list:
-        symbol.draw()
-    if drag_symbol:
-        drag_symbol.draw()
+    if menu:
+        lang_item.draw()
+        play_item.draw()
+        exit_item.draw()
+    else:
+        for box in box_list:
+            box.draw()
+        result_box.draw()
+        for symbol in symbol_list:
+            symbol.draw()
+        if drag_symbol:
+            drag_symbol.draw()
 
 @window.event
 def on_mouse_motion(x, y, dx, dy):
-    for obj in symbol_list+box_list:
-        obj.on_mouse_motion(x, y)
+    global menu_hover
+    if menu:
+        play_item.on_mouse_motion(x, y)
+        exit_item.on_mouse_motion(x, y)
+    else:
+        for obj in symbol_list+box_list:
+            obj.on_mouse_motion(x, y)
 
 @window.event
 def on_mouse_press(x, y, button, modifiers):
     global drag_symbol
-    for obj in symbol_list+box_list:
-        drag_symbol = obj.on_mouse_press(x, y, button)
-        if drag_symbol != None:
-            break
+    global menu
+    if menu:
+        play_item.on_mouse_press(x, y, button)
+        exit_item.on_mouse_press(x, y, button)
+    else:
+        for obj in symbol_list+box_list:
+            drag_symbol = obj.on_mouse_press(x, y, button)
+            if drag_symbol != None:
+                grab_sound.play()
+                break
 
 @window.event
 def on_mouse_drag(x, y, dx, dy, buttons, modifiers):
@@ -218,6 +281,7 @@ def on_mouse_release(x, y, button, modifiers):
         for box in box_list:
             box.on_mouse_release(x, y)
         drag_symbol = None
+        drop_sound.play()
     update_result()
 
 def update_result():
